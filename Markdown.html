@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Data Science Salary Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Markdown_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Markdown_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Markdown_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Markdown_files/libs/quarto-html/popper.min.js"></script>
+<script src="Markdown_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Markdown_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Markdown_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Markdown_files/libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Markdown_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Markdown_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Markdown_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="Markdown_files/libs/core-js-2.5.3/shim.min.js"></script>
+
+<script src="Markdown_files/libs/react-18.2.0/react.min.js"></script>
+
+<script src="Markdown_files/libs/react-18.2.0/react-dom.min.js"></script>
+
+<script src="Markdown_files/libs/reactwidget-2.0.0/react-tools.js"></script>
+
+<link href="Markdown_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="Markdown_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="Markdown_files/libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+
+<script src="Markdown_files/libs/reactable-binding-0.4.4/reactable.js"></script>
+
+<link href="Markdown_files/libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+
+<link href="Markdown_files/libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Science Salary Analysis</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="tabelas" class="level2">
+<h2 class="anchored" data-anchor-id="tabelas">TABELAS</h2>
+<div class="cell">
+<div class="cell-output-display">
+<h1 style="color:#000;background:#FFFFFF;text-align:left;font-size:32px;font-style:normal;font-weight:bold;text-decoration:;letter-spacing:px;word-spacing:px;text-transform:;text-shadow:;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Distribuição Salarial de 2024</h1>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-b11a007a8e281c2acf0d" style="width:auto;height:auto;"></div>
+<p style="color:#000;background:#FFFFFF;text-align:left;font-size:16px;font-style:normal;font-weight:normal;text-decoration:;letter-spacing:px;word-spacing:px;text-transform:;text-shadow:;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">State of Data 2024-2025</p>
+<script type="application/json" data-for="htmlwidget-b11a007a8e281c2acf0d">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Faixa Salarial":["Menos de R$ 1.000/mês","de R$ 1.001/mês a R$ 2.000/mês","de R$ 2.001/mês a R$ 3.000/mês","de R$ 3.001/mês a R$ 4.000/mês","de R$ 4.001/mês a R$ 6.000/mês","de R$ 6.001/mês a R$ 8.000/mês","de R$ 8.001/mês a R$ 12.000/mês","de R$ 12.001/mês a R$ 16.000/mês","de R$ 16.001/mês a R$ 20.000/mês","de R$ 20.001/mês a R$ 25.000/mês","de R$ 25.001/mês a R$ 30.000/mês","de R$ 30.001/mês a R$ 40.000/mês","Acima de R$ 40.001/mês"],"Quantidade":[33,155,237,270,593,656,1080,716,456,246,159,158,104],"Relativo":["0.7%","3.2%","4.9%","5.6%","12.2%","13.5%","22.2%","14.7%","9.4%","5.1%","3.3%","3.2%","2.1%"],"Acumulado":["0.7%","3.9%","8.7%","14.3%","26.5%","40.0%","62.2%","76.9%","86.3%","91.3%","94.6%","97.9%","100.0%"],"Icones_Representacao":[33,155,237,270,593,656,1080,716,456,246,159,158,104]},"columns":[{"id":"Faixa Salarial","name":"Faixa Salarial","type":"factor","maxWidth":200},{"id":"Quantidade","name":"Quantidade","type":"numeric","maxWidth":100,"style":[{"background":"#EDF8E9FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#D0EBCEFF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#BDE3BCFF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#B6E0B4FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#6BBC71FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#5DAF69FF","color":"white","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#005A32FF","color":"white","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#50A361FF","color":"white","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#8BCD8CFF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#BBE2BAFF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#CFEBCDFF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#D0EBCDFF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#DCF0D9FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"}]},{"id":"Relativo","name":"Percentual Relativo","type":"character","cell":["0.7%","3.2%","4.9%","5.6%","12.2%","13.5%","22.2%","14.7%","9.4%","5.1%","3.3%","3.2%","2.1%"]},{"id":"Acumulado","name":"Percentual Acumulado","type":"character","format":{"cell":{"digits":1,"percent":true},"aggregated":{"digits":1,"percent":true}}},{"id":"Icones_Representacao","name":"","type":"numeric","cell":[{"name":"div","attribs":{"title":"1 out of 5","aria-label":"1 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"1 out of 5","aria-label":"1 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"2 out of 5","aria-label":"2 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"3 out of 5","aria-label":"3 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"4 out of 5","aria-label":"4 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"4 out of 5","aria-label":"4 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"5 out of 5","aria-label":"5 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"5 out of 5","aria-label":"5 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"3 out of 5","aria-label":"3 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"3 out of 5","aria-label":"3 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"2 out of 5","aria-label":"2 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"2 out of 5","aria-label":"2 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"1 out of 5","aria-label":"1 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]}],"maxWidth":150,"align":"center"}],"searchable":true,"pagination":false,"striped":true,"showSortIcon":false,"theme":{"color":"#6C6D6F","backgroundColor":"#ffffff","borderColor":"#ededed","borderWidth":"1px","stripedColor":"#fafafa","highlightColor":"#fafafa","cellPadding":7,"tableStyle":{"fontSize":12},"headerStyle":{"borderTop":"1px solid #e1e2e4","borderBottom":"1px solid #e1e2e4","padding":"4px","background":"#ffffff","borderColor":"#ffffff","color":"#48494a","textTransform":"uppercase","&:hover":{"color":"#004D9A"},"fontSize":11},"groupHeaderStyle":{"borderTop":"1px solid #e1e2e4","borderLeft":"1px solid #e1e2e4","borderRight":"1px solid #e1e2e4","backgroundColor":"#ffffff","textTransform":"uppercase","fontSize":"11px","color":"#6C6D6F","fontSize.1":11},"rowSelectedStyle":{"backgroundColor":"#48494a"},"inputStyle":{"backgroundColor":"#ffffff","color":"#6C6D6F"},"searchInputStyle":{"color":"#6C6D6F","fontSize":"13px"},"selectStyle":{"color":"#48494a"},"paginationStyle":{"color":"#48494a","fontSize":"13px"},"pageButtonStyle":{"color":"#48494a","fontSize":"13px"}},"language":{"searchPlaceholder":"BUSCAR POR FAIXA..."},"dataKey":"9976f13e76d452ff3c6a55ad1ee66a14"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<section id="interpretação" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação">interpretação:</h3>
+<p>Para entender melhor os dados brutos do salário de profissionais de dados brasileiros, a tabela mostra várias medidas resumo importantes: uma moda salarial na faixa dos R$ 8.001 a R$ 12.000, com cerca de 22,2% dos respondentes, e a mediana de R$ 8.354,67 valor que faz sentido, já que ela se encontra entre R$ 8.001 a R$ 12.000, onde o acumulado até essa faixa atinge 62,2%. Esses valores revelam que, na faixa de R$ 6.001 a R$ 16.000, mais de 50% dos respondentes estão nessa zona. Os dados possuem uma média ponderada levemente superior, de R$ 12.135,60. Uma observação interessante é perceber que existem mais pessoas que ganham mais de R$ 40.000 por mês do que pessoas que ganham menos de R$ 1.000 mensais. Uma hipótese que pode explicar essa diferença é que a amostra das pessoas que realizaram o questionário voluntariamente possui um perfil mais engajado e experiente na comunidade algo difícil para pessoas que estão entrando agora no mercado de trabalho, o que indica um certo viés. Uma última observação é perceber uma assimetria forte pela direita, já que apenas 2,1% ganham acima de R$ 40.000.</p>
+<div class="cell">
+<div class="cell-output-display">
+<h1 style="color:#000;background:#FFFFFF;text-align:left;font-size:32px;font-style:normal;font-weight:bold;text-decoration:;letter-spacing:px;word-spacing:px;text-transform:;text-shadow:;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Distribuição Salarial de 2024 Mundo</h1>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-a44958e0d8299018e055" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a44958e0d8299018e055">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Faixa Salarial":["US$ 1.001-2.000/mês","US$ 2.001-3.500/mês","US$ 3.501-5.000/mês","US$ 5.001-7.500/mês","US$ 7.501-10.000/mês","US$ 10.001-15.000/mês","US$ 15.001-22.500/mês","US$ 22.501-30.000/mês","US$ 30.001-40.000/mês","US$ 40.001-52.500/mês","US$ 52.501-66.500/mês",null],"Quantidade":[60,424,1262,4879,6874,13162,9197,1966,302,56,41,1],"Relativo":[0.00156969443281708,0.0110925073252407,0.0330159062369192,0.127642318961909,0.179834658853077,0.344338635412306,0.240607994976978,0.0514336542486396,0.00790079531184596,0.00146504813729594,0.00107262452909167,2.61615738802846e-05],"Acumulado":[0.00156969443281708,0.0126622017580578,0.045678107994977,0.173320426956886,0.353155085809962,0.697493721222269,0.938101716199247,0.989535370447886,0.997436165759732,0.998901213897028,0.99997383842612,1],"icones":[60,424,1262,4879,6874,13162,9197,1966,302,56,41,1]},"columns":[{"id":"Faixa Salarial","name":"Faixa Salarial","type":"factor","maxWidth":200},{"id":"Quantidade","name":"Quantidade","type":"numeric","maxWidth":100,"style":[{"background":"#EBF7E7FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#E5F4E1FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#D5EED2FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#93D193FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#6EBF72FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#005A32FF","color":"white","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#45995AFF","color":"white","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#C8E8C6FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#E7F5E3FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#EBF7E8FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#ECF7E8FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"},{"background":"#EDF8E9FF","color":"black","fontSize":null,"fontWeight":"normal","transition":"background 1s ease"}]},{"id":"Relativo","name":"Percentual Relativo","type":"numeric","cell":[{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":"#f2f2f2"}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#005A32FF","backgroundImage":null,"width":"0.455857772375019%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"0.2%"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":"#f2f2f2"}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#005A32FF","backgroundImage":null,"width":"3.22139492478347%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1.1%"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":"#f2f2f2"}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#005A32FF","backgroundImage":null,"width":"9.58820847895457%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"3.3%"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":"#f2f2f2"}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#005A32FF","backgroundImage":null,"width":"37.0688345236286%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"12.8%"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":"#f2f2f2"}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#005A32FF","backgroundImage":null,"width":"52.226105455098%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"18.0%"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":"#f2f2f2"}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#005A32FF","backgroundImage":null,"width":"100%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"34.4%"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":"#f2f2f2"}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#005A32FF","backgroundImage":null,"width":"69.8753988755508%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"24.1%"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":"#f2f2f2"}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#005A32FF","backgroundImage":null,"width":"14.9369396748215%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"5.1%"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":"#f2f2f2"}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#005A32FF","backgroundImage":null,"width":"2.29448412095426%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"0.8%"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":"#f2f2f2"}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#005A32FF","backgroundImage":null,"width":"0.425467254216684%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"0.1%"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":"#f2f2f2"}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#005A32FF","backgroundImage":null,"width":"0.31150281112293%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"0.1%"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":"#f2f2f2"}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#005A32FF","backgroundImage":null,"width":"0.00759762953958365%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"0.0%"]}]}]}]},{"id":"Acumulado","name":"Percentual Acumulado","type":"numeric","format":{"cell":{"digits":1,"percent":true},"aggregated":{"digits":1,"percent":true}}},{"id":"icones","name":"","type":"numeric","cell":[{"name":"div","attribs":{"title":"2 out of 5","aria-label":"2 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"2 out of 5","aria-label":"2 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"3 out of 5","aria-label":"3 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"4 out of 5","aria-label":"4 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"4 out of 5","aria-label":"4 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"5 out of 5","aria-label":"5 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"5 out of 5","aria-label":"5 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"3 out of 5","aria-label":"3 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"2 out of 5","aria-label":"2 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"1 out of 5","aria-label":"1 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"1 out of 5","aria-label":"1 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]},{"name":"div","attribs":{"title":"1 out of 5","aria-label":"1 out of 5","role":"img","align":"left"},"children":[{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#555555FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]},{"name":"i","attribs":{"role":"presentation","aria-label":"user icon","style":{"font-size":"16px","color":"#D3D3D3FF","transition":"1s ease"},"aria-hidden":"true","className":"far fa-user"},"children":[]}]}],"maxWidth":150,"align":"center"}],"searchable":true,"pagination":false,"striped":true,"showSortIcon":false,"theme":{"color":"#6C6D6F","backgroundColor":"#ffffff","borderColor":"#ededed","borderWidth":"1px","stripedColor":"#fafafa","highlightColor":"#fafafa","cellPadding":7,"tableStyle":{"fontSize":12},"headerStyle":{"borderTop":"1px solid #e1e2e4","borderBottom":"1px solid #e1e2e4","padding":"4px","background":"#ffffff","borderColor":"#ffffff","color":"#48494a","textTransform":"uppercase","&:hover":{"color":"#004D9A"},"fontSize":11},"groupHeaderStyle":{"borderTop":"1px solid #e1e2e4","borderLeft":"1px solid #e1e2e4","borderRight":"1px solid #e1e2e4","backgroundColor":"#ffffff","textTransform":"uppercase","fontSize":"11px","color":"#6C6D6F","fontSize.1":11},"rowSelectedStyle":{"backgroundColor":"#48494a"},"inputStyle":{"backgroundColor":"#ffffff","color":"#6C6D6F"},"searchInputStyle":{"color":"#6C6D6F","fontSize":"13px"},"selectStyle":{"color":"#48494a"},"paginationStyle":{"color":"#48494a","fontSize":"13px"},"pageButtonStyle":{"color":"#48494a","fontSize":"13px"}},"language":{"searchPlaceholder":"BUSCAR POR FAIXA..."},"dataKey":"d90f0f38c58b5f608d234fcaf0cadb84"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="interpretação-1" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação-1">interpretação:</h3>
+<p>A maior densidade de profissionais se encontra na faixa salarial de US$ 10.001 a US$ 15.000 por mês, o que representa 34,4%, mais de 1/3 da amostra. As três faixas compreendidas entre US$ 7.501 e US$ 22.500 mensais concentram a maior parte dos respondentes. A mediana salarial está localizada na faixa de US$ 10.001 a US$ 15.000, pelo percentual acumulado, que ultrapassa 50%. Quanto aos extremos da distribuição, observa-se um número reduzido de indivíduos nas faixas mais baixas, com apenas 1,3% ganhando até US$ 3.500 por mês. Da mesma forma, nas faixas mais altas, o número de respondentes também cai drasticamente: apenas 6,2% recebem acima de US$ 22.500 mensais, e os que ganham mais de US$ 30.000 representam apenas 1% do total. Extremidades que fazem mais sentidos com o sentido comum, que reforça a possibilidade de viés no banco brasileiro.</p>
+</section>
+</section>
+<section id="boxsplots" class="level2">
+<h2 class="anchored" data-anchor-id="boxsplots">BOXSPLOTS</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Markdown_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="1440"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="interpretação-2" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação-2">interpretação:</h3>
+<p>O boxplot confirma as medidas resumo e evidencia uma grande concentração de salários dentro de um intervalo definido pelos quartis (Q1 e Q3), localizados entre aproximadamente US$ 8.000 e US$ 18.000. O primeiro quartil (Q1) indica que 25% dos indivíduos recebem até cerca de US$ 8.000 mensais, enquanto o terceiro quartil (Q3) revela que 75% ganham até aproximadamente US$ 18.000. Essa faixa intermediária concentra metade da amostra, mas o gráfico também destaca a presença de diversos outliers representados por pontos vermelhos acima do limite superior com salários que ultrapassam os US$ 60.000. Essa configuração reforça uma distribuição assimétrica à direita, na qual os valores mais altos estão mais dispersos. Isso é comum em distribuições salariais, nas quais poucos indivíduos concentram os rendimentos mais elevados, contribuindo para a desigualdade de renda.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Markdown_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="1440"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretação-3" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação-3">interpretação:</h3>
+<p>O boxplot confirma as medidas resumo e expõe alguns outliers presentes, com limites definidos pelos quartis (Q1 e Q3), situados entre R$ 5.000 e R$ 17.500. O primeiro quartil (Q1) está em aproximadamente R$ 5.000, indicando que 25% das pessoas ganham até esse valor por mês. Já o terceiro quartil (Q3) se encontra por volta de R$ 17.500, o que mostra que 75% dos respondentes recebem até esse valor mensalmente. Esses limites também confirmam uma distribuição assimétrica, pois o intervalo interquartil está deslocado para cima, sugerindo que os salários mais altos estão mais espalhados do que os mais baixos. Essa característica reforça a ideia de uma assimetria à direita, típica de distribuições salariais, onde poucos indivíduos</p>
+</section>
+</section>
+<section id="violin-plots" class="level2">
+<h2 class="anchored" data-anchor-id="violin-plots">VIOLIN PLOTS</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Markdown_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="1440"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Média 11958.33R$ Mediana 12841.26R$</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Markdown_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="1440"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Interpretação:</p>
+<p>1 Média 12135.60R$ 2 Mediana 8354.67R$</p>
+</section>
+<section id="barplots-e-stacked-barplots" class="level2">
+<h2 class="anchored" data-anchor-id="barplots-e-stacked-barplots">BARPLOTS e STACKED BARPLOTS</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Markdown_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="1440"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="interpretação-4" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação-4">interpretação:</h3>
+<p>Os dois gráficos, o de barras empilhadas e o de barras simples, mostram que mais pessoas têm ganhado mais, enquanto menos pessoas têm ganhado menos. É perceptível uma drástica diferença entre 2019 e 2024: a moda de 2019 se encontra entre R$ 4.000 e R$ 6.000, enquanto a moda de 2024 está entre R$ 8.000 e R$ 12.000. De acordo com minhas pesquisas, esse valor representa um aumento aproximadamente 20% acima da inflação no mesmo período, o que pode ser atribuído à valorização da profissão. É possível perceber também um aumento especialmente significativo em 2024 na faixa de R$ 16.000 a R$ 20.000, o que, acredito, pode estar relacionado aos altos salários de profissionais de machine learning e inteligência artificial.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Markdown_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="1440"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Markdown_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="1440"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretação-5" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação-5">interpretação:</h3>
+<p>No mundo, parece haver um certo movimento contrário: as pessoas estão ganhando menos do que ganhavam no pico de 2022 e 2023. Vale se questionar se esses picos não se devem ao lançamento do ChatGPT e de outros projetos semelhantes de LLMs. É interessante notar também que, mais recentemente, os salários ultra altos passaram a ter um peso mais significativo.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Markdown_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="1440"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretação-6" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação-6">interpretação:</h3>
+<p>Para confirmar as interpretações do Bar plot, esse lineplot informa com mais detalhes a tendência mundial</p>
+<p>os profissionais que recebiam até US$ 3.500 mensais, que antes somavam proporções consideráveis, hoje representam menos de 2% da amostra.</p>
+<p>Por outro lado, a maior parte dos profissionais passou a se concentrar nas faixas intermediárias, com destaque para a de US$ 10.001 a US$ 15.000 por mês</p>
+<p>Quando somadas às faixas vizinhas (de US$ 7.501 a US$ 22.500), observa-se que cerca de 2/3 dos profissionais estão dentro desse intervalo.</p>
+<p>A queda nessas faixas foi abrupta, especialmente após 2020, o que indica uma possível valorização da área e uma menor entrada de profissionais em posições júnior ou operacionais.</p>
+<p>Poucos ganham muito, poucos ganham pouco</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
